@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find angle_ax12_model_pkg)/launch/angle_robot_ax12_model.launch"/>
+    <include file="$(find angle_ax12_model_pkg)/launch/angle_robot_nodes.launch"/>
+
+</launch>

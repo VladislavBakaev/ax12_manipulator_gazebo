@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+    <rosparam command="load" file="$(find angle_ax12_model_pkg)/config/arm_control.yaml" />
+    <rosparam command="load" file="$(find angle_ax12_model_pkg)/config/gripper_control.yaml" />
+    <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager"
+        args="spawn angle_ax12_controller  gripper_position gripper_sub_position" respawn="false" output="screen"/>
+
+    <rosparam command="load" file="$(find angle_ax12_model_pkg)/config/joint_state_controller.yaml" />
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+
+</launch>

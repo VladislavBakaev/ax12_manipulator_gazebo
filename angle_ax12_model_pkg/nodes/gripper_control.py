@@ -35,6 +35,8 @@ class GripperPlugin():
         else:
             self.left_gripper_cmd.data = self.open_pose_gripper
             self.right_gripper_cmd.data = self.open_pose_gripper
+
+        rospy.sleep(1.0)
         
         return True, ''
 
