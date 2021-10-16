@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="angle_robot_ax12">
+
+    <xacro:macro name="arm_transmission" params="prefix ">
+
+        <transmission name="${prefix}_trans" type="SimpleTransmission">
+          <type>transmission_interface/SimpleTransmission</type>
+          <actuator name="${prefix}_motor">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+           <mechanicalReduction>1</mechanicalReduction>
+          </actuator>
+          <joint name="${prefix}">
+           <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+          </joint>
+        </transmission>
+        
+    </xacro:macro>
+
+    <xacro:macro name="SimpleTransmissionEffort" params="prefix">
+      <transmission name="${prefix}_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="${prefix}">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="${prefix}_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+    </xacro:macro>
+	
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+          <robotNamespace>/</robotNamespace>
+          <controlPeriod>0.001</controlPeriod>
+          <legacyModeNS>false</legacyModeNS>
+        </plugin>
+      </gazebo>
+    <!--################################ ROS-Controllers ######################################-->
+      <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+          <jointName>ang12ax_joint1, ang12ax_joint2, ang12ax_joint3, ang12ax_joint4, ang12ax_joint5</jointName>
+        </plugin>
+    </gazebo>
+
+    <gazebo reference="ang12ax_link0"> 
+      <material>Gazebo/DarkGrey</material>  
+    </gazebo>
+    <gazebo reference="ang12ax_link1"> 
+      <material>Gazebo/DarkGrey</material>  
+    </gazebo>
+    <gazebo reference="ang12ax_link2"> 
+      <material>Gazebo/DarkGrey</material>  
+    </gazebo>
+    <gazebo reference="ang12ax_link3"> 
+      <material>Gazebo/DarkGrey</material>  
+    </gazebo>
+    <gazebo reference="ang12ax_link4"> 
+      <material>Gazebo/DarkGrey</material>  
+    </gazebo>
+    <gazebo reference="ang12ax_link5"> 
+      <material>Gazebo/DarkGrey</material>  
+    </gazebo>
+    <gazebo reference="ang12ax_link_grip_1"> 
+      <material>Gazebo/DarkGrey</material>  
+    </gazebo>
+</robot>

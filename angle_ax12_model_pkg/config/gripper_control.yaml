@@ -1,0 +1,8 @@
+gripper_position:
+    type: effort_controllers/JointPositionController
+    joint: ang12ax_grip_joint_left
+    pid: {p: 1000.0, i: 0.01, d: 0.0}
+gripper_sub_position:
+    type: effort_controllers/JointPositionController
+    joint: ang12ax_grip_joint_right
+    pid: {p: 1000.0, i: 0.01, d: 0.0}
