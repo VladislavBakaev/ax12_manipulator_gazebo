@@ -23,8 +23,8 @@ class RoboticArm:
         self.__joint_2_u = 2.6
         self.__joint_3_l = -2.6
         self.__joint_3_u = 2.6
-        self.__joint_4_l = -1.57
-        self.__joint_4_u = 1.17
+        self.__joint_4_l = -1.60
+        self.__joint_4_u = 1.60
         self.__joint_5_l = -2.60
         self.__joint_5_u = 2.60
 
@@ -166,3 +166,7 @@ class RoboticArm:
         availConfig,q1,q2,q3,q4,q5 = self.__VadatingOfJointAngle(*list_)
 
         return availConfig,[q1,q2,q3,q4,q5]
+
+# arm = RoboticArm()
+# print(arm.DirectProblem(0, -1.57, 0, 1.57,0))
+# print(arm.InversProblem(200,0,197,1.57))
