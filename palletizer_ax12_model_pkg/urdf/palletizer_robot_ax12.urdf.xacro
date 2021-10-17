@@ -4,13 +4,13 @@
 
 	<link name ="world"/>
 	
-	<joint name="ang12x_base_joint" type="fixed">
+	<joint name="pal12x_base_joint" type="fixed">
 		<parent link="world"/>
-		<child link="ang12ax_link0"/>
+		<child link="pal12ax_link0"/>
 		<origin rpy = "0 0 0" xyz="0 0 0" />
 	</joint>
 
-	<link name="ang12ax_link0">
+	<link name="pal12ax_link0">
 		<visual>
 			<origin xyz="0.0 0 0.0" rpy="1.57 0 0"/>
 			<geometry>
@@ -36,13 +36,319 @@
 		</inertial>
 	</link>
 
-	<!-- <joint name="ang12ax_joint1" type="continuous">
-		<parent link="ang12ax_link0"/>
-		<child link="ang12ax_link1"/>
-		<origin xyz = "0 0 0.008" rpy="0 0 0" />
+	<joint name="pal12ax_joint1" type="continuous">
+		<parent link="pal12ax_link0"/>
+		<child link="pal12ax_link1"/>
+		<origin xyz = "0 0 0.009" rpy="0 0 0" />
 		<axis xyz="0 0 1" />
-		
 		<limit effort="5.0" velocity="5.0"/>
-	</joint> -->
+	</joint>
 
+	<link name="pal12ax_link1">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link1.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="0 0 0.04" rpy="1.57 0 1.57"/>
+			<mass value="0.1"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint2" type="continuous">
+		<parent link="pal12ax_link1"/>
+		<child link="pal12ax_link2"/>
+		<origin xyz = "0 0.03488 0.061" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link2">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link2.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="0 -0.02 0.06" rpy="1.57 0 1.57"/>
+			<mass value="0.05"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint3" type="continuous">
+		<parent link="pal12ax_link2"/>
+		<child link="pal12ax_link3"/>
+		<origin xyz = "0 -0.008 0.14" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link3">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link3.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="0.08 -0.02 0" rpy="1.57 0 1.57"/>
+			<mass value="0.05"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint4" type="continuous">
+		<parent link="pal12ax_link3"/>
+		<child link="pal12ax_link4"/>
+		<origin xyz = "0.14 0.00344 0.0" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link4">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link4.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="0.01 -0.0225 0.015" rpy="1.57 0 1.57"/>
+			<mass value="0.1"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint5" type="continuous">
+		<parent link="pal12ax_link1"/>
+		<child link="pal12ax_link5"/>
+		<origin xyz = "0.0 -0.01506  0.061" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link5">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 3.14 -1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 3.14 -1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link5.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="-0.023 0.0 0.0" rpy="1.57 3.14 -1.57"/>
+			<mass value="0.01"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint6" type="continuous">
+		<parent link="pal12ax_link1"/>
+		<child link="pal12ax_link6"/>
+		<origin xyz = "-0.0336 0.02588  0.082775" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link6">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link6.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="-0.01 0.0 0.07" rpy="1.57 0 1.57"/>
+			<mass value="0.05"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint7" type="continuous">
+		<parent link="pal12ax_link2"/>
+		<child link="pal12ax_link7"/>
+		<origin xyz = "0.0 -0.0035  0.14" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link7">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 -1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 -1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link7.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="0.0 0.0 0.01" rpy="1.57 0 -1.57"/>
+			<mass value="0.05"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint8" type="continuous">
+		<parent link="pal12ax_link5"/>
+		<child link="pal12ax_link8"/>
+		<origin xyz = "-0.045 -0.003 0.0" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link8">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link8.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="0.0 0.0 0.07" rpy="1.57 0 1.57"/>
+			<mass value="0.05"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<joint name="pal12ax_joint9" type="continuous">
+		<parent link="pal12ax_link7"/>
+		<child link="pal12ax_link9"/>
+		<origin xyz = "0.021786 -0.003 0.02178" rpy="0 0 0" />
+		<axis xyz="0 1 0" />
+		<limit effort="5.0" velocity="5.0"/>
+	</joint>
+
+	<link name="pal12ax_link9">
+		<visual>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 -1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link9.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0 0.0" rpy="1.57 0 -1.57"/>
+			<geometry>
+				<mesh filename="package://palletizer_ax12_model_pkg/meshes/link9.dae" scale="0.001 0.001 0.001"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="0.07 0.0 0.0" rpy="1.57 0 -1.57"/>
+			<mass value="0.05"/>
+			<inertia
+				ixx="0.00552196561445819"
+				ixy="7.9550614501301E-10"
+				ixz="-1.34378458924839E-09"
+				iyy="0.00352397447953875"
+				iyz="-1.10071809773382E-08"
+				izz="0.00553739792746489" />
+		</inertial>
+	</link>
+
+	<xacro:arm_transmission prefix="pal12ax_joint1"/>
+	<xacro:arm_transmission prefix="pal12ax_joint2"/>
+	<xacro:arm_transmission prefix="pal12ax_joint3"/>
+	<xacro:arm_transmission prefix="pal12ax_joint4"/>
+	<xacro:arm_transmission prefix="pal12ax_joint5"/>
+	<xacro:arm_transmission prefix="pal12ax_joint6"/>
+	<xacro:arm_transmission prefix="pal12ax_joint7"/>
+	<xacro:arm_transmission prefix="pal12ax_joint8"/>
+	<xacro:arm_transmission prefix="pal12ax_joint9"/>
 </robot>

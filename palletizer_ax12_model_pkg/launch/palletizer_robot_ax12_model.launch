@@ -5,8 +5,11 @@
 
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find palletizer_ax12_model_pkg)/urdf/palletizer_robot_ax12.urdf.xacro'"/>
 
+    <include file="$(find palletizer_ax12_model_pkg)/launch/palletizer_robot_ax12_load.launch"/>
+
     <node name="palletizer_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
         args="-urdf -param robot_description -model palletizer_robot" />
+
     
     <node name="robot_state_publisher_palletizer_ax12" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
 </launch>

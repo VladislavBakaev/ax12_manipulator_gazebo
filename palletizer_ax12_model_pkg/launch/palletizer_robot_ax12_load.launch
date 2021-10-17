@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <rosparam command="load" file="$(find palletizer_ax12_model_pkg)/config/arm_control.yaml" />
+    <node name="palletizer_arm_controller_spawner" pkg="controller_manager" type="controller_manager"
+        args="spawn palletizer_ax12_controller" respawn="false" output="screen"/>
+
+    <rosparam command="load" file="$(find palletizer_ax12_model_pkg)/config/joint_state_controller.yaml" />
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+
+</launch>

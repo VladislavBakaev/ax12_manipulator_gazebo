@@ -1,0 +1,30 @@
+palletizer_ax12_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+       - pal12ax_joint1
+       - pal12ax_joint2
+       - pal12ax_joint3
+       - pal12ax_joint4
+       - pal12ax_joint5
+       - pal12ax_joint6
+       - pal12ax_joint7
+       - pal12ax_joint8
+       - pal12ax_joint9
+      
+    constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+/gazebo_ros_control:
+    pid_gains:
+      pal12ax_joint1: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint2: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint3: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint4: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint5: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint6: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint7: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint8: {p: 1000.0, i: 10.0, d: 1.0}
+      pal12ax_joint9: {p: 1000.0, i: 10.0, d: 1.0}
