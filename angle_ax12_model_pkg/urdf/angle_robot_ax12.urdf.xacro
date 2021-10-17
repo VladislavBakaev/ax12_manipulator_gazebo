@@ -75,7 +75,7 @@
 		<parent link="ang12ax_link1"/>
 		<child link="ang12ax_link2"/>
 		<origin xyz = "0 0.0151 0.061" rpy="0 0 0" />
-		<axis xyz="0 1 0" />
+		<axis xyz="0 -1 0" />
 		
 		<limit effort="5.0" velocity="5.0"/>
 	</joint>
@@ -110,7 +110,7 @@
 		<parent link="ang12ax_link2"/>
 		<child link="ang12ax_link3"/>
 		<origin xyz = "0.0 -0.0082 0.08" rpy="0 0 0" />
-		<axis xyz="0 1 0" />
+		<axis xyz="0 -1 0" />
 		
 		<limit effort="5.0" velocity="5.0"/>
 	</joint>
@@ -145,7 +145,7 @@
 		<parent link="ang12ax_link3"/>
 		<child link="ang12ax_link4"/>
 		<origin xyz = "0.0 -0.0078 0.12" rpy="0 0 0" />
-		<axis xyz="0 1 0" />
+		<axis xyz="0 -1 0" />
 		
 		<limit effort="5.0" velocity="5.0"/>
 	</joint>

@@ -2,5 +2,6 @@
 <launch>
 
     <node name="gripper_plugin" pkg="angle_ax12_model_pkg" type="gripper_control.py" output="screen"/>
+    <node name="joint_space_controller" pkg="angle_ax12_model_pkg" type="joint_space_controller.py" output="screen"/>
 
 </launch>

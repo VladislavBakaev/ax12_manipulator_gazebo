@@ -22,6 +22,7 @@ include_directories(
 
 catkin_install_python(PROGRAMS nodes/gripper_control.py
                       nodes/pub.py
+                      nodes/joint_space_controller.py
                       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(FILES
